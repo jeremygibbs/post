@@ -198,7 +198,7 @@ def readvar(dumpfile,varname,**kwargs):
             try:
                var_tmp = np.squeeze(unstagger_grid(dumpfile.variables[varname[0]][0,:,:,:],stag_ax)[lev_a:lev_b,:,:])
             except:
-               var_tmp = np.squeeze(unstagger_grid(dumpfile.variables[varname[0]]+'a'[0,:,:,:],stag_ax)[lev_a:lev_b,:,:])
+               var_tmp = np.squeeze(unstagger_grid(dumpfile.variables[varname[0]+'a'][0,:,:,:],stag_ax)[lev_a:lev_b,:,:])
 
          if nz_local == 1:
             var = var_tmp[ymin:ymax,xmin:xmax] - np.mean(var_tmp)
